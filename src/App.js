@@ -12,7 +12,7 @@ function App() {
 
   const [notes, setNotes] = useState([]);
   useEffect(()=>{
-    axios.get('http://localhost:5000/notes')
+    axios.get('https://notes-keeper-three.vercel.app/notes')
     .then(res => setNotes(res.data))
     .catch(err => console.log('Error: '+err))
   }, [notes])
@@ -20,7 +20,7 @@ function App() {
     
   function handleNote(note){
     console.log(note)
-    axios.post('http://localhost:5000/notes/add', {
+    axios.post('https://notes-keeper-three.vercel.app/notes/add', {
       description: note
     })
       .then(console.log("notes saved successfully..."))
@@ -31,7 +31,7 @@ function App() {
     setNotes((prevNotes) => [...prevNotes, note]);
   }
   function deleteNotes(id){
-    axios.delete(`http://localhost:5000/notes/${id}`)
+    axios.delete(`https://notes-keeper-three.vercel.app/notes/${id}`)
     .then(res => console.log(res))
     .catch(err => console.log("Error: "+err));
 
