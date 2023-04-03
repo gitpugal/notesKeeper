@@ -1,4 +1,0 @@
-{
-    "rewrites": "/backend/(.*)",
-    "destination": "/backend"
-}
